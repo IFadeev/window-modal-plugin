@@ -1,0 +1,22 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(43, 43, 43, 0.548);
+}
+
+.w-modal {
+    width: 450px;
+    min-height: 100px;
+    margin: 150px auto;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.m-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dbdada;
+}
+
