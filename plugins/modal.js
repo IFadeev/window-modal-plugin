@@ -20,8 +20,8 @@ function _createModal(options) {
             </div>
         </div>
     `)
-    
     document.body.appendChild(modal);
+
     return modal
 }
 
@@ -29,8 +29,15 @@ $.modal = function(options) {
     const $modal = _createModal(options)
 
     return {
-        open() {},
-        close() {},
+        open() {
+            $modal.classList.add('open')
+        },
+        close() {
+            $modal.classList.remove('open');
+        },
         destroy() {}
     }
 }
+
+
+

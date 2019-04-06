@@ -5,6 +5,9 @@
     right: 0;
     left: 0;
     background-color: rgba(43, 43, 43, 0.548);
+    z-index: -100;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
 }
 
 .w-modal {
@@ -12,6 +15,20 @@
     min-height: 100px;
     margin: 150px auto;
     background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    position: relative;
+    transform: translateY(-350px);
+    transition: .4s ease-in-out;
+}
+
+.winmodal.open .w-modal {
+    transform: translateY(0);
+    transition: .4s ease-in-out;
+}
+.winmodal.open .overlay {
+    opacity: 1;
+    z-index: 1000;
+    transition: .4s ease-in-out;
 }
 
 .m-header {
@@ -19,4 +36,17 @@
     justify-content: space-between;
     border-bottom: 1px solid #dbdada;
 }
+
+.m-body {
+    border-bottom: 1px solid #dbdada;
+}
+
+.m-header, .m-body,.m-footer {
+ margin: 5px;
+} 
+
+.m-close {
+    cursor: pointer;
+}
+
 
