@@ -1,16 +1,16 @@
 function _createModal(options) {
     const modal = document.createElement('div');
+    const DEFAULT_WIDTH = '450px';
     modal.classList.add('winmodal');
     modal.insertAdjacentHTML('afterbegin', `
     <div class="overlay">
-            <div class="w-modal">
+            <div class="w-modal" style = "width:${options.width || DEFAULT_WIDTH}">
                 <div class="m-header">
-                    <span class="m-title">Title</span>
+                    <span class="m-title">${options.title}</span>
                     <span class="m-close">&times;</span>
                 </div>
                 <div class="m-body">
-                    <p class="m-body__text">Body text 1</p>
-                    <p class="m-body__text">Body text 2</p>
+                    ${options.content || ''}
                 </div>
                 <div class="m-footer">
                     <button>Close</button>
@@ -25,6 +25,16 @@ function _createModal(options) {
     return modal
 }
 
+const options = {
+    title: "Отправка данных",
+    closoble: true,
+    content: "<div class='m-body'>",
+    width: "s"
+}
+
+/*
+* Методо destroy() 
+*/
 $.modal = function(options) {
     const $modal = _createModal(options)
 
@@ -34,6 +44,7 @@ $.modal = function(options) {
         },
         close() {
             $modal.classList.remove('open');
+
         },
         destroy() {}
     }
